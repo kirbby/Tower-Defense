@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Tower Defense"
+run/main_scene="res://map_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [editor]
 
