@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bbqcunlmsfs7j"]
+
+[ext_resource type="Texture2D" uid="uid://dnkb1iejc1itt" path="res://assets/NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="1_1puus"]
+
+[resource]
+atlas = ExtResource("1_1puus")
+region = Rect2(48, 272, 32, 32)
