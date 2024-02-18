@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://kcy1atijx2xp"
+path="res://.godot/imported/9 - Quiet.ogg-27b37391ebf6e805959c26c627aa4e53.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/9 - Quiet.ogg"
+dest_files=["res://.godot/imported/9 - Quiet.ogg-27b37391ebf6e805959c26c627aa4e53.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

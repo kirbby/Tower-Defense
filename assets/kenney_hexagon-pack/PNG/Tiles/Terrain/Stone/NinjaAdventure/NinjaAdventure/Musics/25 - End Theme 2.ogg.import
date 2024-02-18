@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1cj8f57gcabk"
+path="res://.godot/imported/25 - End Theme 2.ogg-f7cde1eae64363a0c0ff693d9812c94d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/25 - End Theme 2.ogg"
+dest_files=["res://.godot/imported/25 - End Theme 2.ogg-f7cde1eae64363a0c0ff693d9812c94d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

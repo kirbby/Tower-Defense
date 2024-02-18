@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://yvnrrktqyho6"
+path="res://.godot/imported/12 - Temple.ogg-4343bdcf158cccc7671dd631d2644d2c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/12 - Temple.ogg"
+dest_files=["res://.godot/imported/12 - Temple.ogg-4343bdcf158cccc7671dd631d2644d2c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brrr34napx2vc"
+path="res://.godot/imported/15 - Credit Theme.ogg-a005ba0c6b3a3142e643fbb6739dd2fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/15 - Credit Theme.ogg"
+dest_files=["res://.godot/imported/15 - Credit Theme.ogg-a005ba0c6b3a3142e643fbb6739dd2fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

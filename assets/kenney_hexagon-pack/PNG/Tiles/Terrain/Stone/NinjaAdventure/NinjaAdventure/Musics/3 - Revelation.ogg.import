@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1loa3wh55sxg"
+path="res://.godot/imported/3 - Revelation.ogg-6236311ae4179abd5024d09b8268fdbd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/3 - Revelation.ogg"
+dest_files=["res://.godot/imported/3 - Revelation.ogg-6236311ae4179abd5024d09b8268fdbd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

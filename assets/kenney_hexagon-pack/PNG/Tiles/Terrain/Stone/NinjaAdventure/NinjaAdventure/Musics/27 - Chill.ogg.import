@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bhyqhq7jrv4la"
+path="res://.godot/imported/27 - Chill.ogg-7023e3d31f9ff198d0945f22fd859ed0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/27 - Chill.ogg"
+dest_files=["res://.godot/imported/27 - Chill.ogg-7023e3d31f9ff198d0945f22fd859ed0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

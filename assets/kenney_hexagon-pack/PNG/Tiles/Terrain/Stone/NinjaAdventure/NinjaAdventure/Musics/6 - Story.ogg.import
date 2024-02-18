@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl6rd27m36wor"
+path="res://.godot/imported/6 - Story.ogg-093337db85fdf737dc29b96f52ef7504.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/6 - Story.ogg"
+dest_files=["res://.godot/imported/6 - Story.ogg-093337db85fdf737dc29b96f52ef7504.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

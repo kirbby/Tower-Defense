@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bcc0dyjgjan1n"
+path="res://.godot/imported/5 - Peaceful.ogg-693364b7c5c88c89de18403c56f70daf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/5 - Peaceful.ogg"
+dest_files=["res://.godot/imported/5 - Peaceful.ogg-693364b7c5c88c89de18403c56f70daf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

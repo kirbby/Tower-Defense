@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csadu1pijmocx"
+path="res://.godot/imported/26 - Lost Village.ogg-143bb33051a92c129fab73aba2135b63.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/kenney_hexagon-pack/PNG/Tiles/Terrain/Stone/NinjaAdventure/NinjaAdventure/Musics/26 - Lost Village.ogg"
+dest_files=["res://.godot/imported/26 - Lost Village.ogg-143bb33051a92c129fab73aba2135b63.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
