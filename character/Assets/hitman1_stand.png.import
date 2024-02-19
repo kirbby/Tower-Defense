@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvncrxv7iqjrq"
-path="res://.godot/imported/hitman1_machine.png-43f7a79f9f4e8332f84e24c5bb634b23.ctex"
+uid="uid://cbv261bfs5sdf"
+path="res://.godot/imported/hitman1_stand.png-edcd58b06baa911debbbdceeeb936da0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/hitman1_machine.png"
-dest_files=["res://.godot/imported/hitman1_machine.png-43f7a79f9f4e8332f84e24c5bb634b23.ctex"]
+source_file="res://character/Assets/hitman1_stand.png"
+dest_files=["res://.godot/imported/hitman1_stand.png-edcd58b06baa911debbbdceeeb936da0.ctex"]
 
 [params]
 

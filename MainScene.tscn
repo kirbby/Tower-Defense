@@ -9,6 +9,8 @@
 [node name="Map" parent="." instance=ExtResource("1_lxcbn")]
 
 [node name="Player" parent="Map" instance=ExtResource("2_uulkp")]
+rotation = 0.394444
+scale = Vector2(10, 10)
 
 [node name="BaseScene" parent="Map" instance=ExtResource("2_l1ra4")]
 position = Vector2(688, 80)
