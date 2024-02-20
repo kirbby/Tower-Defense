@@ -21,3 +21,9 @@ func checkInput(delta):
 		bulletTemp.velocity = -direction*800
 		bulletTemp.global_position = $bullet.global_position
 		get_parent().add_child(bulletTemp)
+
+
+signal player_ready(player_instance)
+
+func _ready():
+	emit_signal("player_ready", self)
