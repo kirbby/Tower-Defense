@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var speed = 40
 
 @onready var navigation_agent := $Navigation/NavigationAgent2D as NavigationAgent2D
-
-# Initialisiere Referenzen für den AnimatedSprite und AnimationPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(_delta: float) -> void:

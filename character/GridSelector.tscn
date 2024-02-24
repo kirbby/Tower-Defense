@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5glvjabbli6a"]
+
+[ext_resource type="Texture2D" uid="uid://b27e33t3i64li" path="res://assets/grid_selector.png" id="1_ehgm6"]
+
+[node name="GridSelector" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_ehgm6")
+centered = false
+offset = Vector2(8, -8)

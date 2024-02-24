@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://wejofghsca6l"]
+[gd_scene load_steps=6 format=3 uid="uid://wejofghsca6l"]
 
 [ext_resource type="PackedScene" uid="uid://cgrtsuv72n5rv" path="res://maps/basic/BasicMapScene.tscn" id="1_lxcbn"]
 [ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://base/BaseScene.tscn" id="2_l1ra4"]
 [ext_resource type="PackedScene" uid="uid://hoials6gagej" path="res://character/Player.tscn" id="2_uulkp"]
 [ext_resource type="PackedScene" uid="uid://b27c13cqurlao" path="res://enemies/basic/BasicEnemyScene.tscn" id="4_br3li"]
+[ext_resource type="PackedScene" uid="uid://5glvjabbli6a" path="res://character/GridSelector.tscn" id="5_dpgru"]
 
 [node name="Main" type="Node2D"]
 
@@ -21,6 +22,8 @@ position = Vector2(608, 64)
 position = Vector2(306, 225)
 Target = NodePath("../BaseScene")
 speed = 100
+
+[node name="GridSelector" parent="Map" instance=ExtResource("5_dpgru")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(375, 291)
