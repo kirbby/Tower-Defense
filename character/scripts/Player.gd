@@ -11,7 +11,13 @@ func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	checkInput(delta)
 	move_and_slide()
-	grid_selector.global_position = global_position
+	
+# Calculate the new position based on the direction the player is looking
+	var direction = Vector2(1, 0).rotated(rotation)  # Get the forward vector
+	var new_position = global_position + direction * 48  # Move 32 units in the forward direction
+
+	# Snap the new position to the grid
+	grid_selector.global_position = Vector2(snapped(new_position.x, 32), snapped(new_position.y, 32))
 	
 
 # Walking and Shooting Solution
