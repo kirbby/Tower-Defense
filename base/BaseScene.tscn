@@ -7,12 +7,12 @@ size = Vector2(32, 28)
 
 [node name="BaseScene" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="BaseBody2D" type="StaticBody2D" parent="."]
 
-[node name="BaseAtlasTexture" type="Sprite2D" parent="StaticBody2D"]
+[node name="BaseAtlasTexture" type="Sprite2D" parent="BaseBody2D"]
 position = Vector2(0, -16)
 texture = ExtResource("1_4axdg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/BaseAtlasTexture"]
+[node name="BaseCollisionShape" type="CollisionShape2D" parent="BaseBody2D/BaseAtlasTexture"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_l02il")

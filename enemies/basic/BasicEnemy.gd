@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
-# Geschwindigkeit, mit der sich der Charakter bewegen soll
-@export var Player: Node2D
-const speed = 40
-var acceleration = 7
+@export var Target: Node2D
+@export var speed = 40
 
 @onready var navigation_agent := $Navigation/NavigationAgent2D as NavigationAgent2D
 
@@ -17,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 	update_animation(direction) # Aktualisiere die Animation basierend auf der Bewegungsrichtung
 
 func makepath() -> void:
-	navigation_agent.target_position = Player.global_position
+	navigation_agent.target_position = Target.global_position
 
 func _on_timer_timeout():
 	makepath()
