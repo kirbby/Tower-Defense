@@ -13,6 +13,6 @@ size = Vector2(32, 28)
 position = Vector2(0, -16)
 texture = ExtResource("1_4axdg")
 
-[node name="BaseCollisionShape" type="CollisionShape2D" parent="BaseBody2D/BaseAtlasTexture"]
-position = Vector2(0, 2)
+[node name="BaseCollisionShape" type="CollisionShape2D" parent="BaseBody2D"]
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_l02il")
