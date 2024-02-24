@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
-@export var speed: float = 400.0
+signal buildTower
 
 @onready var bullet = preload("res://character/bullet.tscn")
 @onready var grid_selector = $"../GridSelector"
 
+@export var speed: float = 400.0
+
+var currentTower = preload("res://towers/basic/BasicTowerScene.tscn")
 var direction: Vector2 = Vector2.ZERO
 
 func _physics_process(delta):
@@ -22,16 +25,26 @@ func positionGridSelector():
 
 # Walking and Shooting Solution
 func checkInput(delta):
+	playerMove()
+	playerShoot()
+	playerBuildTower()
+
+func playerMove():
 	var inputVector = Vector2(Input.get_axis("moveLeft", "moveRight"), Input.get_axis("moveUp", "moveDown")).normalized()
 	# Direkte Zuweisung der berechneten Geschwindigkeit zur velocity-Eigenschaft
 	velocity = inputVector * speed
 	direction = (self.global_position - get_global_mouse_position()).normalized()
 	
+func playerShoot():
 	if Input.is_action_just_pressed("LeftClick"):
 		var bulletTemp = bullet.instantiate()
-		bulletTemp.velocity = -direction*800
+		bulletTemp.velocity = -direction * 800
 		bulletTemp.global_position = $bullet.global_position
 		get_parent().add_child(bulletTemp)
+		
+func playerBuildTower():
+	if Input.is_action_just_pressed("buildTower"):
+		emit_signal("buildTower")
 
 signal player_ready(player_instance)
 

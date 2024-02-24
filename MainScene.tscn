@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://wejofghsca6l"]
+[gd_scene load_steps=9 format=3 uid="uid://wejofghsca6l"]
 
 [ext_resource type="PackedScene" uid="uid://cgrtsuv72n5rv" path="res://maps/basic/BasicMapScene.tscn" id="1_lxcbn"]
+[ext_resource type="Script" path="res://maps/basic/BasicMapScene.gd" id="2_54yyo"]
 [ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://base/BaseScene.tscn" id="2_l1ra4"]
 [ext_resource type="PackedScene" uid="uid://hoials6gagej" path="res://character/Player.tscn" id="2_uulkp"]
 [ext_resource type="PackedScene" uid="uid://b27c13cqurlao" path="res://enemies/basic/BasicEnemyScene.tscn" id="4_br3li"]
 [ext_resource type="PackedScene" uid="uid://5glvjabbli6a" path="res://character/GridSelector.tscn" id="5_dpgru"]
 [ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers/basic/BasicTowerScene.tscn" id="6_8r4jh"]
 
+[sub_resource type="GDScript" id="GDScript_3kb00"]
+
 [node name="Main" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_lxcbn")]
+script = ExtResource("2_54yyo")
 
 [node name="Player" parent="Map" instance=ExtResource("2_uulkp")]
 position = Vector2(113, 283)
@@ -22,15 +26,17 @@ position = Vector2(608, 64)
 [node name="BasicEnemyScene" parent="Map" node_paths=PackedStringArray("Target") instance=ExtResource("4_br3li")]
 position = Vector2(306, 225)
 Target = NodePath("../BaseScene")
-speed = 100
 
 [node name="GridSelector" parent="Map" instance=ExtResource("5_dpgru")]
 
 [node name="Towers" type="Node2D" parent="Map"]
+script = SubResource("GDScript_3kb00")
 
 [node name="BasicTowerScene" parent="Map/Towers" instance=ExtResource("6_8r4jh")]
-position = Vector2(458, 199)
+position = Vector2(272, 144)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(375, 291)
 zoom = Vector2(1.775, 1.775)
+
+[connection signal="buildTower" from="Map/Player" to="Map" method="_on_player_build_tower"]
