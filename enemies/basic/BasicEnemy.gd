@@ -14,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 
 func makepath() -> void:
 	navigation_agent.target_position = Target.global_position
-
+	print("makepath() aufgerufen - Zielposition: ", Target.global_position)
 func _on_timer_timeout():
 	makepath()
 
@@ -34,3 +34,5 @@ func update_animation(movement_direction: Vector2):
 	else:
 		# Optional: Spiele eine Idle-Animation, wenn keine Bewegung vorliegt
 		animated_sprite.play("idle")
+
+

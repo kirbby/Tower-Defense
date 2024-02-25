@@ -8,7 +8,7 @@ var currentTower = preload("res://towers/basic/BasicTowerScene.tscn")
 
 func _on_player_build_tower():
 	var cellLocalCoordinates = tileMap.local_to_map(gridSelector.global_position)
-	var tile: TileData = tileMap.get_cell_tile_data(0, cellLocalCoordinates)
+	var tile: TileData = tileMap.get_cell_tile_data(-1, cellLocalCoordinates)
 	
 	if tile == null or currentTower == null:
 		return

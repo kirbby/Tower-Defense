@@ -351,6 +351,9 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation"]
+avoidance_enabled = true
+radius = 32.46
+avoidance_mask = 3
 debug_enabled = true
 
 [node name="Timer" type="Timer" parent="Navigation/NavigationAgent2D"]

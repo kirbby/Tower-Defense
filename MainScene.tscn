@@ -33,7 +33,7 @@ Target = NodePath("../BaseScene")
 script = SubResource("GDScript_3kb00")
 
 [node name="BasicTowerScene" parent="Map/Towers" instance=ExtResource("6_8r4jh")]
-position = Vector2(272, 144)
+position = Vector2(344, 164)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(375, 291)
