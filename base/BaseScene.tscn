@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwayniueax1fo"]
+[gd_scene load_steps=4 format=3 uid="uid://dwayniueax1fo"]
 
+[ext_resource type="Script" path="res://base/BaseScene.gd" id="1_0y3b5"]
 [ext_resource type="Texture2D" uid="uid://bbqcunlmsfs7j" path="res://base/base_atlas_texture.tres" id="1_4axdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l02il"]
 size = Vector2(32, 28)
 
-[node name="BaseScene" type="Node2D"]
+[node name="BaseScene" type="Area2D"]
+script = ExtResource("1_0y3b5")
 
-[node name="BaseBody2D" type="StaticBody2D" parent="."]
-
-[node name="BaseAtlasTexture" type="Sprite2D" parent="BaseBody2D"]
+[node name="BaseAtlasTexture" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
 texture = ExtResource("1_4axdg")
 
-[node name="BaseCollisionShape" type="CollisionShape2D" parent="BaseBody2D"]
+[node name="BaseCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_l02il")

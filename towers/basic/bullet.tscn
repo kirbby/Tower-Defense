@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://i0l43eouqmbr"]
+[gd_scene load_steps=5 format=3 uid="uid://dopfclcs468gb"]
 
 [ext_resource type="Script" path="res://towers/basic/bullet.gd" id="1_phe87"]
 [ext_resource type="Texture2D" uid="uid://b1t5v6y1nnyql" path="res://towers/assets/towerDefense_tile251.png" id="1_r2xid"]

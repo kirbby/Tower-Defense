@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqx3w51h6gled"]
+
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_pcb81"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_x8w88"]
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_pcb81")
+
+[node name="controls_container" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+mouse_filter = 0
+theme = ExtResource("2_x8w88")
+
+[node name="controls" type="HBoxContainer" parent="controls_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 0
+alignment = 1
+
+[node name="instructions" type="Label" parent="controls_container/controls"]
+layout_mode = 2
+text = "LMB to place wall, RMB to erase"
+
+[node name="heuristic" type="HBoxContainer" parent="controls_container/controls"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="label" type="Label" parent="controls_container/controls/heuristic"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Heuristic:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="options" type="OptionButton" parent="controls_container/controls/heuristic"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Euclidean"
+popup/item_0/id = 0
+popup/item_1/text = "Manhattan"
+popup/item_1/id = 1
+popup/item_2/text = "Octile"
+popup/item_2/id = 2
+popup/item_3/text = "Chebyshev"
+popup/item_3/id = 3
+
+[node name="diagonal" type="HBoxContainer" parent="controls_container/controls"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="label" type="Label" parent="controls_container/controls/diagonal"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Diagonal Mode:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="options" type="OptionButton" parent="controls_container/controls/diagonal"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Always"
+popup/item_0/id = 0
+popup/item_1/text = "Never"
+popup/item_1/id = 1
+popup/item_2/text = "At least one walkable"
+popup/item_2/id = 2
+popup/item_3/text = "Only if no obstacles"
+popup/item_3/id = 3
+
+[node name="jump" type="CheckButton" parent="controls_container/controls"]
+layout_mode = 2
+text = "Jump"
+
+[connection signal="item_selected" from="controls_container/controls/heuristic/options" to="." method="_on_options_changed" unbinds=1]
+[connection signal="item_selected" from="controls_container/controls/diagonal/options" to="." method="_on_options_changed" unbinds=1]
+[connection signal="toggled" from="controls_container/controls/jump" to="." method="_on_options_changed" unbinds=1]
