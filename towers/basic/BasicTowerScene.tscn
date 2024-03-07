@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbw7hk5p3ve24"]
+[gd_scene load_steps=4 format=3 uid="uid://dbw7hk5p3ve24"]
 
 [ext_resource type="Script" path="res://towers/basic/BasicTower.gd" id="1_7uvbb"]
 [ext_resource type="Texture2D" uid="uid://cvhsxhu73shac" path="res://towers/assets/towerDefense_tile206.png" id="1_rbfea"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooql1"]
-size = Vector2(37.3333, 37.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_676tt"]
 radius = 100.0
@@ -17,17 +14,11 @@ rotation = 1.5708
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_rbfea")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.76837e-07, 2.18557e-08)
-rotation = 1.5708
-scale = Vector2(0.75, 0.75)
-shape = SubResource("RectangleShape2D_ooql1")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(7, 0)
+[node name="ShootPosition" type="Marker2D" parent="."]
+position = Vector2(11, 0)
 
 [node name="RangeArea" type="Area2D" parent="."]
-position = Vector2(0, 1)
+scale = Vector2(2.465, 2.465)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea"]
 shape = SubResource("CircleShape2D_676tt")

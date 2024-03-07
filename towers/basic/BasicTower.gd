@@ -1,11 +1,13 @@
 extends StaticBody2D
 
-var bullet_scene = preload("res://towers/basic/bullet.tscn")
+var missile_scene = preload("res://towers/basic/weapons/missile.tscn")
 @export var bullet_damage = 5
 @export var fire_rate = 1.0 # Schussrate in Schüssen pro Sekunde
 var possible_targets = []
 var current_target = null
 var time_since_last_shot = 0.0
+@onready var _shoot_position = $ShootPosition
+
 
 func _ready():
 	# Verbindet das Signal für das Betreten des Bereichs mit der Funktion, die prüft, ob ein Gegner in Reichweite ist.
@@ -25,12 +27,13 @@ func turn():
 
 func shoot():
 	if current_target != null and time_since_last_shot >= 1.0 / fire_rate:
-		var bullet_instance = bullet_scene.instantiate()
-		bullet_instance.global_position = self.global_position
-		bullet_instance.look_at(current_target.global_position)
-		# Hier könntest du eine Funktion in deinem Bullet-Skript aufrufen, um das Ziel zu setzen oder die Richtung zu bestimmen
-		add_child(bullet_instance)
+		var missile = missile_scene.instantiate() as Missile
+		missile.global_position = _shoot_position.global_position
+		missile.look_at(current_target.global_position)
+		missile.set_target(current_target)
+		add_child(missile)
 		time_since_last_shot = 0.0
+
 
 
 func find_next_target():
