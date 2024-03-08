@@ -5,7 +5,6 @@ class_name BasicEnemySceneAstar
 signal enemy_removed
 # Geschwindigkeit, mit der sich der Charakter bewegen soll.
 @export var speed = 50
-
 @export var health := 100
 
 # Pfad, den der Gegner folgen wird (Liste von Vector2-Positionen).

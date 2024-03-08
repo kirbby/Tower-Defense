@@ -32,6 +32,9 @@ extends Node2D
 @onready var ui = $pathfinding_settings_ui # Benutzeroberfläche für Einstellungen und Interaktionen.
 @onready var camera = $Camera2D as Camera2D
 
+
+signal path_updated(path_positions)
+
 # Gegner-Szene, die für die Erstellung neuer Gegner-Instanzen vorab geladen wird.
 var enemy_scene = preload("res://enemies/Enemy T1/enemy_t_1.tscn")
 # Die AStarGrid-Instanz, die für die Berechnung von Pfaden verwendet wird.
@@ -124,20 +127,21 @@ func find_path() -> void:
 	path.clear() # Löscht den aktuellen Pfad.
 	start_cell = game_map.local_to_map(start.position) # Konvertiert die Startposition in Grid-Koordinaten.
 	end_cell = game_map.local_to_map(goal.position) # Konvertiert die Zielposition in Grid-Koordinaten.
-	
 	# Überprüft, ob ein gültiger Pfad existieren kann.
 	if start_cell == end_cell or !astar_grid.is_in_boundsv(start_cell) or !astar_grid.is_in_boundsv(end_cell):
 		return # Beendet die Funktion frühzeitig, wenn kein Pfad gefunden werden kann.
-
 	var id_path = astar_grid.get_id_path(start_cell, end_cell) # Erhält den Pfad als Liste von Punkt-IDs.
+	var path_positions = []
 	for id in id_path:
+		path_positions.append(astar_grid.get_point_position(id))
+		emit_signal("path_updated", path_positions)
 		# Zeichnet den Pfad auf der TileMap für visuelle Darstellung.
 		path.set_cell(0, id, 4, Vector2(0, 0))
 	queue_redraw() # Fordert ein Neuzeichnen des Pfads an.
 
 # Fügt Gegner basierend auf dem gefundenen Pfad hinzu und aktualisiert ihre Pfade.
 # Diese Funktion wird aufgerufen, nachdem ein optimaler Pfad gefunden wurde.
-	add_enemy_to_path(id_path)
+# 	add_enemy_to_path(id_path)
 	update_all_enemies_path()
 
 func add_enemy_to_path(id_path: Array) -> void:
