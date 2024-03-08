@@ -1,10 +1,10 @@
 [gd_scene load_steps=38 format=3 uid="uid://b27c13cqurlao"]
 
-[ext_resource type="Script" path="res://enemies/basic/BasicEnemy.gd" id="1_kuly2"]
-[ext_resource type="Texture2D" uid="uid://cb48s3eisa071" path="res://enemies/basic/S_Walk_flip.png" id="2_4sywv"]
-[ext_resource type="Texture2D" uid="uid://d0ouhq3m4211t" path="res://enemies/basic/U_Walk.png" id="3_mpcla"]
-[ext_resource type="Texture2D" uid="uid://d2kxrtof213ia" path="res://enemies/basic/D_Walk.png" id="4_3isyh"]
-[ext_resource type="Texture2D" uid="uid://8no7ua6fdcqk" path="res://enemies/basic/S_Walk.png" id="5_ku506"]
+[ext_resource type="Script" path="res://enemies/basic_old/BasicEnemy.gd" id="1_kuly2"]
+[ext_resource type="Texture2D" uid="uid://cb48s3eisa071" path="res://enemies/basic_old/S_Walk_flip.png" id="2_4sywv"]
+[ext_resource type="Texture2D" uid="uid://d0ouhq3m4211t" path="res://enemies/basic_old/U_Walk.png" id="3_mpcla"]
+[ext_resource type="Texture2D" uid="uid://d2kxrtof213ia" path="res://enemies/basic_old/D_Walk.png" id="4_3isyh"]
+[ext_resource type="Texture2D" uid="uid://8no7ua6fdcqk" path="res://enemies/basic_old/S_Walk.png" id="5_ku506"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6m1d"]
 atlas = ExtResource("2_4sywv")
