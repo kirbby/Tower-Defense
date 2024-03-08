@@ -11,6 +11,7 @@
 [node name="BasicMapSceneAstargrid" parent="." instance=ExtResource("1_um2ql")]
 
 [node name="pathfinding_settings_ui" parent="BasicMapSceneAstargrid" instance=ExtResource("4_kofkr")]
+visible = false
 
 [node name="spawn_zone_Scene" parent="BasicMapSceneAstargrid" instance=ExtResource("3_1rnub")]
 position = Vector2(15, 31)
