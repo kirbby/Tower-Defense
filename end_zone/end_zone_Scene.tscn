@@ -7,6 +7,7 @@
 size = Vector2(32, 28)
 
 [node name="end_zone_Scene" type="Area2D"]
+collision_layer = 8
 script = ExtResource("1_0y3b5")
 
 [node name="end_zone_AtlasTexture" type="Sprite2D" parent="."]
@@ -16,3 +17,5 @@ texture = ExtResource("1_4axdg")
 [node name="end_zone_CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_l02il")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

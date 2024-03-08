@@ -11,6 +11,7 @@ var is_mouse_over := false
 
 func set_health(value: int) -> void:
 	health = max(0, value)
+	print("Health: ", health)
 	if health == 0:
 		collision_shape.set_deferred("disalbed",true)
 		
@@ -38,3 +39,10 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	is_mouse_over = false
+
+
+func _on_body_entered(body):
+	if body is Enemy:
+		var enemy = body as Enemy
+		health -= enemy.objective_damage # Replace with function body.
+		enemy.queue_free()
