@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbw7hk5p3ve24"]
+
+[ext_resource type="Script" path="res://towers_weapons/towers/basic/BasicTower.gd" id="1_7uvbb"]
+[ext_resource type="Texture2D" uid="uid://cvhsxhu73shac" path="res://towers_weapons/assets/towerDefense_tile206.png" id="1_rbfea"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_676tt"]
+radius = 100.0
+
+[node name="BasicTower" type="StaticBody2D"]
+script = ExtResource("1_7uvbb")
+
+[node name="Tower" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_rbfea")
+
+[node name="ShootPosition" type="Marker2D" parent="."]
+position = Vector2(11, 0)
+
+[node name="RangeArea" type="Area2D" parent="."]
+scale = Vector2(2.465, 2.465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea"]
+shape = SubResource("CircleShape2D_676tt")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 21.32
+avoidance_layers = 3
+
+[connection signal="body_entered" from="RangeArea" to="." method="_on_range_area_body_entered"]
+[connection signal="body_shape_exited" from="RangeArea" to="." method="_on_range_area_body_shape_exited"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://hoials6gagej"]
+
+[ext_resource type="Script" path="res://player/base_player/scripts/Player.gd" id="1_cann8"]
+[ext_resource type="Texture2D" uid="uid://bvncrxv7iqjrq" path="res://player/base_player/Assets/hitman1_machine.png" id="2_u6c2t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrl1d"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(15.675, 15.675)
+script = ExtResource("1_cann8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.255, -0.045)
+scale = Vector2(0.13, 0.13)
+shape = SubResource("CapsuleShape2D_hrl1d")
+metadata/_edit_lock_ = true
+
+[node name="Hitman1Machine" type="Sprite2D" parent="."]
+position = Vector2(0.809, -0.07)
+scale = Vector2(0.081514, 0.0872093)
+texture = ExtResource("2_u6c2t")
+metadata/_edit_lock_ = true
+
+[node name="bullet" type="Node2D" parent="."]
+position = Vector2(2.75311, 0.754885)

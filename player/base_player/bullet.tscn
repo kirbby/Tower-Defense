@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://biffjttk7eqpe"]
+
+[ext_resource type="Script" path="res://player/base_player/scripts/bullet.gd" id="1_eo6co"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q16wm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1cjb"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[node name="Bullet" type="CharacterBody2D"]
+scale = Vector2(2.35, 2.35)
+script = ExtResource("1_eo6co")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.205, 0.205)
+shape = SubResource("CircleShape2D_q16wm")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_a1cjb")

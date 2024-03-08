@@ -1,11 +1,12 @@
 extends CharacterBody2D
-
 class_name BasicEnemySceneAstar
 
 # Signal, das ausgelöst wird, wenn der Gegner entfernt wurde.
 signal enemy_removed
 # Geschwindigkeit, mit der sich der Charakter bewegen soll.
-var speed = 50
+@export var speed = 50
+
+@export var health := 100
 
 # Pfad, den der Gegner folgen wird (Liste von Vector2-Positionen).
 var path = []

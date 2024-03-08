@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -64,5 +65,10 @@ buildTower={
 
 [layer_names]
 
+2d_render/layer_1="enemy"
+2d_render/layer_2="tower"
+2d_render/layer_3="projectile"
+2d_render/layer_4="tower_slot"
+2d_render/layer_5="end_zone"
 2d_physics/layer_1="Objects"
 2d_physics/layer_2="Monsters"

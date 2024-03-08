@@ -1,47 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://wejofghsca6l"]
+[gd_scene load_steps=6 format=3 uid="uid://wejofghsca6l"]
 
 [ext_resource type="PackedScene" uid="uid://cybekd7uj6ja8" path="res://maps/basic/BasicMapSceneAstargrid.tscn" id="1_um2ql"]
-[ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://base/BaseScene.tscn" id="2_l1ra4"]
-[ext_resource type="PackedScene" uid="uid://dimhqq8rcf2rn" path="res://Spawn/SpawnScene.tscn" id="3_1rnub"]
-[ext_resource type="PackedScene" uid="uid://dqx3w51h6gled" path="res://ui/ui.tscn" id="4_kofkr"]
-[ext_resource type="PackedScene" uid="uid://b27c13cqurlao" path="res://enemies/basic/BasicEnemySceneAstar.tscn" id="5_7gdnd"]
-[ext_resource type="PackedScene" uid="uid://5glvjabbli6a" path="res://character/GridSelector.tscn" id="5_dpgru"]
-[ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers/basic/BasicTowerScene.tscn" id="6_8r4jh"]
-[ext_resource type="PackedScene" uid="uid://dmgyw2jdxxywp" path="res://character2-test/player.tscn" id="6_ccvy7"]
-[ext_resource type="PackedScene" uid="uid://dopfclcs468gb" path="res://towers/basic/weapons/missile.tscn" id="8_amvml"]
+[ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://end_zone/end_zone_Scene.tscn" id="2_r5fpp"]
+[ext_resource type="PackedScene" uid="uid://dimhqq8rcf2rn" path="res://spawn_zone/spawn_zone_Scene.tscn" id="3_1rnub"]
+[ext_resource type="PackedScene" uid="uid://dqx3w51h6gled" path="res://ui/pathfinding_settings_ui/pathfinding_settings_ui.tscn" id="4_kofkr"]
+[ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers_weapons/towers/basic/BasicTowerScene.tscn" id="6_8r4jh"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(518, 274)
-zoom = Vector2(1.775, 1.775)
-
 [node name="BasicMapSceneAstargrid" parent="." instance=ExtResource("1_um2ql")]
 
-[node name="BaseScene" parent="BasicMapSceneAstargrid" instance=ExtResource("2_l1ra4")]
-position = Vector2(865, 408)
+[node name="pathfinding_settings_ui" parent="BasicMapSceneAstargrid" instance=ExtResource("4_kofkr")]
 
-[node name="SpawnScene" parent="BasicMapSceneAstargrid" instance=ExtResource("3_1rnub")]
-position = Vector2(15, 40)
+[node name="spawn_zone_Scene" parent="BasicMapSceneAstargrid" instance=ExtResource("3_1rnub")]
+position = Vector2(15, 31)
 
-[node name="ui" parent="BasicMapSceneAstargrid" instance=ExtResource("4_kofkr")]
-
-[node name="GridSelector" parent="BasicMapSceneAstargrid" instance=ExtResource("5_dpgru")]
-position = Vector2(7.62939e-06, 3.05176e-05)
-
-[node name="Player" parent="." instance=ExtResource("6_ccvy7")]
-position = Vector2(358, 225)
-
-[node name="BasicEnemySceneAstar" parent="." instance=ExtResource("5_7gdnd")]
-position = Vector2(16, 62)
-
-[node name="Missile" parent="." instance=ExtResource("8_amvml")]
-position = Vector2(183, 165)
+[node name="end_zone_Scene" parent="BasicMapSceneAstargrid" instance=ExtResource("2_r5fpp")]
+position = Vector2(859, 386)
 
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="BasicTower" parent="Towers" instance=ExtResource("6_8r4jh")]
 position = Vector2(154, 213)
 
-[connection signal="position_updated" from="BasicMapSceneAstargrid/BaseScene" to="BasicMapSceneAstargrid" method="_on_base_spawn_scene_position_updated"]
-[connection signal="position_updated" from="BasicMapSceneAstargrid/SpawnScene" to="BasicMapSceneAstargrid" method="_on_base_spawn_scene_position_updated"]
+[connection signal="options_updated" from="BasicMapSceneAstargrid/pathfinding_settings_ui" to="BasicMapSceneAstargrid" method="_on_ui_options_updated"]
+[connection signal="position_updated" from="BasicMapSceneAstargrid/spawn_zone_Scene" to="BasicMapSceneAstargrid" method="_on_spawn_end_zone_scene_position_updated"]
+[connection signal="position_updated" from="BasicMapSceneAstargrid/end_zone_Scene" to="BasicMapSceneAstargrid" method="_on_spawn_end_zone_scene_position_updated"]

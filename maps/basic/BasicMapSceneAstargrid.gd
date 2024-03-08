@@ -25,11 +25,12 @@
 extends Node2D
 
 # Verweise auf Spielobjekte und UI-Elemente, die für die Pfadfindung und Spiellogik benötigt werden.
-@onready var game_map = $GameMap # Die Spielkarte.
+@onready var game_map = $GameMap as TileMap # Die Spielkarte.
 @onready var path = $path # Der Pfad, der im Spiel dargestellt wird.
-@onready var start = $SpawnScene # Startpunkt der Gegner.
-@onready var goal = $BaseScene # Ziel der Gegner.
-@onready var ui = $ui # Benutzeroberfläche für Einstellungen und Interaktionen.
+@onready var start = $spawn_zone_Scene # Startpunkt der Gegner.
+@onready var goal = $end_zone_Scene # Ziel der Gegner.
+@onready var ui = $pathfinding_settings_ui # Benutzeroberfläche für Einstellungen und Interaktionen.
+@onready var camera = $Camera2D as Camera2D
 
 # Gegner-Szene, die für die Erstellung neuer Gegner-Instanzen vorab geladen wird.
 var enemy_scene = preload("res://enemies/basic/BasicEnemySceneAstar.tscn")
@@ -49,6 +50,17 @@ func _ready() -> void:
 	_update_grid_from_tilemap() # Aktualisiert das Grid, um Hindernisse zu berücksichtigen.
 	find_path() # Findet den ersten Pfad von Start zu Ziel.
 	queue_redraw() # Fordert ein Neuzeichnen des Spielfensters an, um Änderungen sichtbar zu machen.
+	var map_limits := game_map.get_used_rect()
+	var tile_size: Vector2 = game_map.tile_set.tile_size
+	camera.limit_left = map_limits.position.x * tile_size.x
+	camera.limit_top = map_limits.position.y * tile_size.y
+	camera.limit_right = map_limits.end.x * tile_size.x
+	camera.limit_bottom = map_limits.end.y * tile_size.y
+
+
+
+
+
 
 func _on_layout_updated() -> void:
 	## Wird aufgerufen, wenn das Layout der Spielkarte aktualisiert wird, z.B. durch das Platzieren oder Entfernen von Hindernissen.
@@ -68,7 +80,7 @@ func _on_options_updated(heuristic: int, diagonal: int, jump: bool) -> void:
 	find_path() # Findet den Pfad basierend auf den neuen Einstellungen.
 	queue_redraw() # Fordert ein Neuzeichnen an, um den neuen Pfad anzuzeigen.
 
-func _on_base_spawn_scene_position_updated() -> void:
+func _on_spawn_end_zone_scene_position_updated() -> void:
 	## Wird aufgerufen, wenn die Position des Spawn-Punkts oder des Ziels geändert wird.
 	# Aktualisiert die Start- und Zielzellen im AStar-Grid und sucht den Pfad neu.
 	var new_start_cell = game_map.local_to_map(start.position) # Konvertiert die neue Startposition in Grid-Koordinaten.
@@ -191,3 +203,8 @@ func _draw() -> void:
 func _on_enemy_removed(enemy: Node) -> void:
 	if enemy in enemies:
 		enemies.erase(enemy) # Entfernt den Gegner aus dem Array der Gegner.
+
+
+
+func _on_ui_options_updated(heuristic, diagonal, jump):
+	pass # Replace with function body.
