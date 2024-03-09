@@ -1,0 +1,178 @@
+[gd_scene load_steps=21 format=3 uid="uid://ck5lv0q2hahsn"]
+
+[ext_resource type="Script" path="res://towers_weapons/towers/baisc2.0/Shooter.gd" id="1_03ekn"]
+[ext_resource type="Texture2D" uid="uid://cfu741i3ckays" path="res://assets/Tower Defense (top-down)/PNG/Default size/towerDefense_tile250.png" id="2_l6ckd"]
+[ext_resource type="PackedScene" uid="uid://co6y6a41x34gy" path="res://towers_weapons/weapons/Projectile1/projectile_1.tscn" id="2_nddmh"]
+[ext_resource type="Texture2D" uid="uid://bs7s2pb240eoh" path="res://assets/Tower Defense (top-down)/PNG/Default size/towerDefense_tile2502.0-sheet.png" id="3_vtrev"]
+[ext_resource type="Texture2D" uid="uid://bl2x5l20qojbn" path="res://assets/Tower Defense (top-down)/PNG/Default size/muzzleflash-sheet.png" id="4_vgymu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0m5a"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytheu"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfqwq"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81ehe"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ho7e"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp8ef"]
+atlas = ExtResource("3_vtrev")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5ob8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l6ckd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0m5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytheu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfqwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81ehe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ho7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp8ef")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 24.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bspk5"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm0kl"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iovxk"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h43x5"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mddc8"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpes4"]
+atlas = ExtResource("4_vgymu")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0acj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bspk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm0kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iovxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h43x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mddc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpes4")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w06v8"]
+radius = 100.0
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_03ekn")
+fire_rate = 0.4
+projectile_type = ExtResource("2_nddmh")
+projectile_speed = 100
+projectile_damage = 50
+
+[node name="Gun" type="AnimatedSprite2D" parent="."]
+rotation = -4.71239
+scale = Vector2(0.435, 0.435)
+sprite_frames = SubResource("SpriteFrames_d5ob8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Muzzle" type="Marker2D" parent="Gun"]
+position = Vector2(-4.59768, -29.8851)
+rotation = -1.57005
+
+[node name="Muzzle2" type="Marker2D" parent="Gun"]
+position = Vector2(4.59773, -29.8851)
+rotation = -1.5708
+
+[node name="MuzzleFlash" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -3.63798e-12)
+rotation = 1.5708
+scale = Vector2(0.435, 0.435)
+sprite_frames = SubResource("SpriteFrames_c0acj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 1.0
+
+[node name="Detector" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+visible = false
+shape = SubResource("CircleShape2D_w06v8")
+
+[node name="LookAhead" type="RayCast2D" parent="."]
+target_position = Vector2(125, 0)
+collide_with_areas = true
+
+[node name="FireRateTimer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="Gun" to="." method="_on_gun_animation_finished"]
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Detector" to="." method="_on_detector_area_exited"]
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
+[connection signal="timeout" from="FireRateTimer" to="." method="_on_fire_rate_timer_timeout"]

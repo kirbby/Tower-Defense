@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0nacfr62siu0"]
+
+[ext_resource type="Texture2D" uid="uid://doqxwfedsvc6o" path="res://assets/Tower Defense (top-down)/PNG/Default size/towerDefense_tile180.png" id="1_0nddt"]
+[ext_resource type="PackedScene" uid="uid://ck5lv0q2hahsn" path="res://towers_weapons/towers/baisc2.0/shooter.tscn" id="2_yuekl"]
+
+[node name="basictower2" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="foundation" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("1_0nddt")
+
+[node name="Shooter" parent="." instance=ExtResource("2_yuekl")]
+projectile_damage = 10

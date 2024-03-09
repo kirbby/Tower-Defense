@@ -5,7 +5,8 @@ class_name BasicEnemySceneAstar
 signal enemy_removed
 # Geschwindigkeit, mit der sich der Charakter bewegen soll.
 @export var speed = 50
-@export var health := 100
+@export var health := 100:
+	set = set_health
 
 # Pfad, den der Gegner folgen wird (Liste von Vector2-Positionen).
 var path = []
@@ -16,6 +17,7 @@ var progress = 0.0
 
 # Initialisiere Referenzen für den AnimatedSprite.
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape := $CollisionShape2D as CollisionShape2D
 
 func _ready():
 	# Setze die Startposition auf den ersten Punkt im Pfad, wenn vorhanden.
@@ -46,6 +48,16 @@ func _physics_process(delta):
 
 	# Aktualisiere die Animation basierend auf der Bewegungsrichtung.
 	update_animation(direction)
+
+func set_health(value: int) -> void:
+	health = max(0, value)
+	if health == 0:
+		die()
+		
+func die() -> void:
+	collision_shape.set_deferred("disabled", true)
+	speed = 0
+	queue_free()
 
 func update_animation(direction: Vector2):
 	# Aktualisiere die Animation basierend auf der Bewegungsrichtung.

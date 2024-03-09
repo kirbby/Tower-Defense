@@ -7,6 +7,8 @@
 radius = 100.0
 
 [node name="BasicTower" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_7uvbb")
 
 [node name="Tower" type="Sprite2D" parent="."]
