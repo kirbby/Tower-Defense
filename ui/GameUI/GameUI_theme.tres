@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dk6hyktn8lnp1"]
+
+[ext_resource type="Texture2D" uid="uid://cgfvc3tc24dc8" path="res://assets/NinjaAdventure/HUD/Dialog/ChoiceBox.png" id="1_7vh8y"]
+[ext_resource type="Texture2D" uid="uid://bbcypsovfbov5" path="res://assets/NinjaAdventure/HUD/Dialog/FacesetBox.png" id="2_e8jyj"]
+[ext_resource type="Texture2D" uid="uid://cqfs6oqins12f" path="res://assets/NinjaAdventure/HUD/Dialog/DialogueBoxSimple.png" id="3_20r3f"]
+[ext_resource type="FontFile" uid="uid://c0ulhxred6brr" path="res://assets/droid-sans/DroidSans-Bold.ttf" id="4_5io8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayxmj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3gkp"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_7vh8y")
+modulate_color = Color(1, 1, 1, 0.627451)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5s8n4"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("1_7vh8y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fplkq"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("1_7vh8y")
+modulate_color = Color(0.392157, 0.372549, 0.211765, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpg2g"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 30.0
+texture = ExtResource("2_e8jyj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvxa4"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+texture = ExtResource("3_20r3f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjgkp"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbnh3"]
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("4_5io8g")
+Button/styles/focus = SubResource("StyleBoxEmpty_ayxmj")
+Button/styles/hover = SubResource("StyleBoxTexture_i3gkp")
+Button/styles/normal = SubResource("StyleBoxTexture_5s8n4")
+Button/styles/pressed = SubResource("StyleBoxTexture_fplkq")
+Label/styles/normal = SubResource("StyleBoxTexture_qpg2g")
+Panel/styles/panel = SubResource("StyleBoxTexture_uvxa4")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_sjgkp")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qbnh3")

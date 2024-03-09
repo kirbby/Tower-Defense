@@ -30,6 +30,10 @@ project/assembly_name="Tower Defense"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[gui]
+
+theme/custom="res://ui/GameUI/GameUI_theme.tres"
+
 [input]
 
 moveLeft={

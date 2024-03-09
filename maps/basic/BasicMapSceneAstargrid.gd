@@ -36,7 +36,7 @@ extends Node2D
 signal path_updated(path_positions)
 
 # Gegner-Szene, die für die Erstellung neuer Gegner-Instanzen vorab geladen wird.
-var enemy_scene = preload("res://enemies/Enemy T1/enemy_t_1.tscn")
+var enemy_scene = preload("res://enemies/Enemy T2/enemy_t_2.tscn")
 # Die AStarGrid-Instanz, die für die Berechnung von Pfaden verwendet wird.
 var astar_grid: AStarGrid2D
 # Start- und Zielzellen im AStar-Grid, die für die Pfadfindung verwendet werden.

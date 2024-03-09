@@ -4,7 +4,7 @@ class_name BasicEnemySceneAstar
 # Signal, das ausgelöst wird, wenn der Gegner entfernt wurde.
 signal enemy_removed
 # Geschwindigkeit, mit der sich der Charakter bewegen soll.
-@export var speed = 50
+@export var speed = 60
 @export var health := 100:
 	set = set_health
 
@@ -18,11 +18,14 @@ var progress = 0.0
 # Initialisiere Referenzen für den AnimatedSprite.
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape := $CollisionShape2D as CollisionShape2D
+@onready var hud := $UI/Livebar as Livebar
 
 func _ready():
 	# Setze die Startposition auf den ersten Punkt im Pfad, wenn vorhanden.
 	if path.size() > 0:
 		global_position = path[0]
+	hud.health_bar.max_value = health
+	hud.health_bar.value = health
 
 func _physics_process(delta):
 	# Beende die Methode, wenn der Pfad abgeschlossen ist.
@@ -51,8 +54,11 @@ func _physics_process(delta):
 
 func set_health(value: int) -> void:
 	health = max(0, value)
+	if is_instance_valid(hud):
+		hud.health_bar.value = health
 	if health == 0:
 		die()
+	
 		
 func die() -> void:
 	collision_shape.set_deferred("disabled", true)

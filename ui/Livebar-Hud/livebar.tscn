@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://lf4xpib6von8"]
+
+[ext_resource type="Script" path="res://ui/Livebar-Hud/livebar.gd" id="1_pbdr5"]
+
+[sub_resource type="Gradient" id="Gradient_unjs2"]
+colors = PackedColorArray(0.533333, 0.878431, 0.376471, 1, 0.607843, 1, 0.427451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tcnfj"]
+gradient = SubResource("Gradient_unjs2")
+width = 100
+height = 20
+
+[node name="Livebar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pbdr5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 28.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+value = 100.0
+texture_progress = SubResource("GradientTexture2D_tcnfj")
+
+[node name="ReloadBar" type="ProgressBar" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+show_percentage = false

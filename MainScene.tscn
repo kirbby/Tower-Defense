@@ -23,8 +23,17 @@ position = Vector2(859, 386)
 [node name="basictower2" parent="BasicMapSceneAstargrid" instance=ExtResource("5_84twg")]
 position = Vector2(91, 169)
 
+[node name="basictower2" parent="BasicMapSceneAstargrid/basictower2" instance=ExtResource("5_84twg")]
+position = Vector2(188, 2)
+
+[node name="basictower2" parent="BasicMapSceneAstargrid/basictower2/basictower2" instance=ExtResource("5_84twg")]
+position = Vector2(189, -1)
+
+[node name="basictower2" parent="BasicMapSceneAstargrid/basictower2/basictower2/basictower2" instance=ExtResource("5_84twg")]
+position = Vector2(158, 3)
+
 [node name="BasicTower" parent="BasicMapSceneAstargrid" instance=ExtResource("6_a0243")]
-position = Vector2(437, 239)
+position = Vector2(921, 144)
 
 [connection signal="path_updated" from="BasicMapSceneAstargrid" to="BasicMapSceneAstargrid/spawn_zone_Scene" method="_on_path_updated"]
 [connection signal="options_updated" from="BasicMapSceneAstargrid/pathfinding_settings_ui" to="BasicMapSceneAstargrid" method="_on_ui_options_updated"]

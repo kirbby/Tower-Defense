@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5arvqfbsm47i"]
+
+[ext_resource type="Texture2D" uid="uid://bbcypsovfbov5" path="res://assets/NinjaAdventure/HUD/Dialog/FacesetBox.png" id="1_jgth4"]
+[ext_resource type="Texture2D" uid="uid://b7ofnhrj2s78w" path="res://assets/NinjaAdventure/Items/Potion/Hear.png" id="2_4wyur"]
+[ext_resource type="Texture2D" uid="uid://bt1t2pvfu2i77" path="res://assets/NinjaAdventure/HUD/LifeBarMiniUnder.png" id="3_t1dve"]
+[ext_resource type="Texture2D" uid="uid://dniomqt8rt3bl" path="res://assets/NinjaAdventure/HUD/LifeBarMiniProgress.png" id="4_4xfms"]
+[ext_resource type="Texture2D" uid="uid://carurtmvn8op3" path="res://assets/NinjaAdventure/HUD/Arrow.png" id="5_sttpu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_andre"]
+texture = ExtResource("1_jgth4")
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 1572.0
+offset_right = 1913.0
+offset_bottom = 148.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_andre")
+
+[node name="Rows" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 41.67
+offset_top = 19.94
+offset_right = 81.67
+offset_bottom = 62.9399
+
+[node name="Health" type="HBoxContainer" parent="Control/Panel/Rows"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Control/Panel/Rows/Health"]
+layout_mode = 2
+texture = ExtResource("2_4wyur")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/Panel/Rows/Health"]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("3_t1dve")
+texture_progress = ExtResource("4_4xfms")
+texture_progress_offset = Vector2(4, 4)
+
+[node name="Money" type="HBoxContainer" parent="Control/Panel/Rows"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Control/Panel/Rows/Money"]
+layout_mode = 2
+texture = ExtResource("5_sttpu")
+
+[node name="Money Label" type="Label" parent="Control/Panel/Rows/Money"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Wavelabel" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 191.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 24
+text = "Wave: 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Wave" type="Panel" parent="."]
+offset_left = 788.0
+offset_top = 10.0
+offset_right = 1132.0
+offset_bottom = 74.0

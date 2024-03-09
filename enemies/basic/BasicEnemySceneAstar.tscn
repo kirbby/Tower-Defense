@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://b27c13cqurlao"]
+[gd_scene load_steps=39 format=3 uid="uid://b27c13cqurlao"]
 
 [ext_resource type="Script" path="res://enemies/basic/BasicEnemyAstar.gd" id="1_neeqr"]
 [ext_resource type="Texture2D" uid="uid://cb48s3eisa071" path="res://enemies/basic_old/S_Walk_flip.png" id="2_n4ea2"]
 [ext_resource type="Texture2D" uid="uid://d0ouhq3m4211t" path="res://enemies/basic_old/U_Walk.png" id="3_wnm8p"]
 [ext_resource type="Texture2D" uid="uid://d2kxrtof213ia" path="res://enemies/basic_old/D_Walk.png" id="4_elyr3"]
 [ext_resource type="Texture2D" uid="uid://8no7ua6fdcqk" path="res://enemies/basic_old/S_Walk.png" id="5_8l3rr"]
+[ext_resource type="PackedScene" uid="uid://lf4xpib6von8" path="res://ui/Livebar-Hud/livebar.tscn" id="6_7jwuh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6m1d"]
 atlas = ExtResource("2_n4ea2")
@@ -330,6 +331,8 @@ position = Vector2(0, -1)
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_neeqr")
+speed = 20
+health = 500
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wpevl")
@@ -345,5 +348,15 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_64my8")
 metadata/_edit_lock_ = true
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 50
+
+[node name="Livebar" parent="UI" instance=ExtResource("6_7jwuh")]
+offset_left = -10.0
+offset_top = -17.0
+offset_right = 30.0
+offset_bottom = 23.0
+scale = Vector2(0.22056, 0.212761)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
