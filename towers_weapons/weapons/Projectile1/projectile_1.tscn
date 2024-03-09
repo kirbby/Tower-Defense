@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://co6y6a41x34gy"]
+
+[ext_resource type="Texture2D" uid="uid://2xcylk241ouj" path="res://assets/Tower Defense (top-down)/PNG/Default size/bullet-sheet.png" id="1_bmfmy"]
+[ext_resource type="Script" path="res://towers_weapons/weapons/Projectile1/projectile_1.gd" id="1_ji0y3"]
+[ext_resource type="Texture2D" uid="uid://boix244n0cajy" path="res://assets/Tower Defense (top-down)/PNG/Default size/explosion.png" id="2_dughj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fupwt"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6sw2"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71hkd"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vsku"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s36c"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj6e1"]
+atlas = ExtResource("1_bmfmy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pb0ax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fupwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6sw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71hkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vsku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s36c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj6e1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgvyp"]
+radius = 3.0
+height = 7.99978
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i35g"]
+atlas = ExtResource("2_dughj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu5pp"]
+atlas = ExtResource("2_dughj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flih"]
+atlas = ExtResource("2_dughj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6mxk"]
+atlas = ExtResource("2_dughj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akidf"]
+atlas = ExtResource("2_dughj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5ijn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i35g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu5pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8flih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6mxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akidf")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[node name="Projectile1" type="Area2D"]
+rotation = -1.5708
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ji0y3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(30.625, 0.095)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_pb0ax")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.554993
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30.625, 0.095)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_tgvyp")
+
+[node name="HitVfx" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+scale = Vector2(0.465, 0.465)
+sprite_frames = SubResource("SpriteFrames_x5ijn")
+animation = &"hit"
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="HitVfx" to="." method="_on_hit_vfx_animation_finished"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

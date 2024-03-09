@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://wejofghsca6l"]
+[gd_scene load_steps=7 format=3 uid="uid://wejofghsca6l"]
 
 [ext_resource type="PackedScene" uid="uid://cybekd7uj6ja8" path="res://maps/basic/BasicMapSceneAstargrid.tscn" id="1_um2ql"]
 [ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://end_zone/end_zone_Scene.tscn" id="2_r5fpp"]
 [ext_resource type="PackedScene" uid="uid://dimhqq8rcf2rn" path="res://spawn_zone/spawn_zone_Scene.tscn" id="3_1rnub"]
 [ext_resource type="PackedScene" uid="uid://dqx3w51h6gled" path="res://ui/pathfinding_settings_ui/pathfinding_settings_ui.tscn" id="4_kofkr"]
-[ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers_weapons/towers/basic/BasicTowerScene.tscn" id="6_8r4jh"]
+[ext_resource type="PackedScene" uid="uid://0nacfr62siu0" path="res://towers_weapons/towers/baisc2.0/basictower2.0.tscn" id="5_84twg"]
+[ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers_weapons/towers/basic/BasicTowerScene.tscn" id="6_a0243"]
 
 [node name="Main" type="Node2D"]
 
@@ -19,10 +20,11 @@ position = Vector2(15, 31)
 [node name="end_zone_Scene" parent="BasicMapSceneAstargrid" instance=ExtResource("2_r5fpp")]
 position = Vector2(859, 386)
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="basictower2" parent="BasicMapSceneAstargrid" instance=ExtResource("5_84twg")]
+position = Vector2(91, 169)
 
-[node name="BasicTower" parent="Towers" instance=ExtResource("6_8r4jh")]
-position = Vector2(154, 213)
+[node name="BasicTower" parent="BasicMapSceneAstargrid" instance=ExtResource("6_a0243")]
+position = Vector2(437, 239)
 
 [connection signal="path_updated" from="BasicMapSceneAstargrid" to="BasicMapSceneAstargrid/spawn_zone_Scene" method="_on_path_updated"]
 [connection signal="options_updated" from="BasicMapSceneAstargrid/pathfinding_settings_ui" to="BasicMapSceneAstargrid" method="_on_ui_options_updated"]
