@@ -157,11 +157,9 @@ autoplay = "idle"
 frame_progress = 1.0
 
 [node name="Detector" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-visible = false
 shape = SubResource("CircleShape2D_w06v8")
 
 [node name="LookAhead" type="RayCast2D" parent="."]
