@@ -21,7 +21,7 @@ position = Vector2(15, 31)
 position = Vector2(859, 386)
 
 [node name="basictower2" parent="BasicMapSceneAstargrid" instance=ExtResource("5_84twg")]
-position = Vector2(91, 169)
+position = Vector2(58, 183)
 
 [node name="BasicTower" parent="BasicMapSceneAstargrid" instance=ExtResource("6_a0243")]
 position = Vector2(921, 144)
