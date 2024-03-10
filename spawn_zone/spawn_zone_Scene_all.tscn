@@ -1,20 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dimhqq8rcf2rn"]
+[gd_scene load_steps=4 format=3 uid="uid://cga5exowbbbid"]
 
-[ext_resource type="Script" path="res://spawn_zone/spawn_zone_Scene.gd" id="1_a80ay"]
-[ext_resource type="Texture2D" uid="uid://bbqcunlmsfs7j" path="res://end_zone/end_zone_atlas_texture.tres" id="2_wgm3h"]
+[ext_resource type="Script" path="res://spawn_zone/spawn_zone_Scene_all.gd" id="1_xrkta"]
+[ext_resource type="Texture2D" uid="uid://bbqcunlmsfs7j" path="res://end_zone/end_zone_atlas_texture.tres" id="2_ktu58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l02il"]
 size = Vector2(32, 28)
 
-[node name="spawn_zone_Scene" type="Area2D"]
-script = ExtResource("1_a80ay")
-spawn_rate = 0.5
-wave_count = 5
-enemies_per_wave_count = 5
+[node name="spawn_zone_Scene_all" type="Area2D"]
+script = ExtResource("1_xrkta")
 
 [node name="spawn_zone_AtlasTexture" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
-texture = ExtResource("2_wgm3h")
+texture = ExtResource("2_ktu58")
 
 [node name="spawn_zone_CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
