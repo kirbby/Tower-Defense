@@ -44,9 +44,9 @@ func shoot() -> void:
 
 func _instantiate_projectile(_position: Vector2) -> void:
 	var projectile: Projectile1 = projectile_type.instantiate()
-	print("Mündungsposition: ", _position) # Debug-Ausgabe
+	#print("Mündungsposition: ", _position) # Debug-Ausgabe
 	projectile.start(_position, rotation, projectile_speed, projectile_damage)
-	print("Projektilposition nach Start: ", projectile.global_position) # Debug-Ausgabe
+	#print("Projektilposition nach Start: ", projectile.global_position) # Debug-Ausgabe
 	projectile.collision_mask = $Detector.collision_mask
 	if map:
 		map.add_child(projectile)
