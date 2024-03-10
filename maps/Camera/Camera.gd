@@ -1,7 +1,7 @@
 extends Camera2D
 
 @export var min_zoom := 0.25
-@export var max_zoom := 2.0
+@export var max_zoom := 3.0
 @export var zoom_rate := 16.0
 @export var zoom_delta := 0.1
 @export var drag_speed := 1.0
