@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wejofghsca6l"]
+[gd_scene load_steps=7 format=3 uid="uid://wejofghsca6l"]
 
 [ext_resource type="PackedScene" uid="uid://cybekd7uj6ja8" path="res://maps/basic/BasicMapSceneAstargrid.tscn" id="1_um2ql"]
 [ext_resource type="PackedScene" uid="uid://dwayniueax1fo" path="res://end_zone/end_zone_Scene.tscn" id="2_r5fpp"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dqx3w51h6gled" path="res://ui/pathfinding_settings_ui/pathfinding_settings_ui.tscn" id="4_kofkr"]
 [ext_resource type="PackedScene" uid="uid://0nacfr62siu0" path="res://towers_weapons/towers/baisc2.0/basictower2.0.tscn" id="5_84twg"]
 [ext_resource type="PackedScene" uid="uid://dbw7hk5p3ve24" path="res://towers_weapons/towers/basic/BasicTowerScene.tscn" id="6_a0243"]
-[ext_resource type="PackedScene" uid="uid://cga5exowbbbid" path="res://spawn_zone/spawn_zone_Scene_all.tscn" id="7_6sp3y"]
 
 [node name="Main" type="Node2D"]
 
@@ -27,11 +26,7 @@ position = Vector2(58, 183)
 [node name="BasicTower" parent="BasicMapSceneAstargrid" instance=ExtResource("6_a0243")]
 position = Vector2(921, 144)
 
-[node name="spawn_zone_Scene_all" parent="BasicMapSceneAstargrid" instance=ExtResource("7_6sp3y")]
-position = Vector2(11, 110)
-
 [connection signal="path_updated" from="BasicMapSceneAstargrid" to="BasicMapSceneAstargrid/spawn_zone_Scene" method="_on_path_updated"]
 [connection signal="options_updated" from="BasicMapSceneAstargrid/pathfinding_settings_ui" to="BasicMapSceneAstargrid" method="_on_ui_options_updated"]
 [connection signal="position_updated" from="BasicMapSceneAstargrid/spawn_zone_Scene" to="BasicMapSceneAstargrid" method="_on_spawn_end_zone_scene_position_updated"]
 [connection signal="position_updated" from="BasicMapSceneAstargrid/end_zone_Scene" to="BasicMapSceneAstargrid" method="_on_spawn_end_zone_scene_position_updated"]
-[connection signal="position_updated" from="BasicMapSceneAstargrid/spawn_zone_Scene_all" to="BasicMapSceneAstargrid" method="_on_spawn_end_zone_scene_position_updated"]

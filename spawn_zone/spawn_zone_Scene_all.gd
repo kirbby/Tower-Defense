@@ -80,5 +80,5 @@ func _on_spawn_timer_timeout():
 	spawn_timer.stop() # Stoppt den Timer, um Mehrfachausführungen zu verhindern
 	for spawner_marker in spawn_locations:
 		for i in range(enemies_per_spawner_count):
-			_spawn_new_enemy("res://enemies/Enemy T2/enemy_t_2.tscn", spawner_marker)
+			_spawn_new_enemy("res://enemies/Enemy-t1/enemy_t_1.tscn", spawner_marker)
 	_end_wave()

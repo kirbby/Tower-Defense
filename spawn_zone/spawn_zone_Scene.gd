@@ -83,7 +83,7 @@ func _on_wave_timer_timeout() -> void:
 
 func _on_spawn_timer_timeout():
 	if current_enemy_count < enemies_per_wave_count:
-		_spawn_new_enemy("res://enemies/Enemy T2/enemy_t_2.tscn")
+		_spawn_new_enemy("res://enemies/Enemy-t1/enemy_t_1.tscn")
 		var spawn_delay := randf_range(spawn_rate /2.0, spawn_rate)
 		spawn_timer.start(spawn_delay)
 	else:
